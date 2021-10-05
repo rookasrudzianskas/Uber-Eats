@@ -14,7 +14,7 @@ const SearchBar = () => {
                     console.log(data, details);
                 }}
                 query={{
-                    key: 'YOUR API KEY',
+                    key: 'AIzaSyC1CSh5mZFE6sw-2gjZoP3b7KjS3iXGysI',
                     language: 'en',
                 }}
                 styles={{
