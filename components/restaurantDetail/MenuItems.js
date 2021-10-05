@@ -3,6 +3,7 @@ import {Image, ScrollView, Text, View} from "react-native";
 import {StyleSheet} from "react-native";
 import {Divider} from "react-native-elements";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
+import ViewCart from "./ViewCart";
 
 
 
@@ -20,29 +21,21 @@ const foods = [
         image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
     },
     {
-        title: "contain",
+        title: "sea",
         description: 'Hello this is an awesome pizza, oh hey, lasagna',
         price: '$14.53',
         image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
     },
     {
-        title: "sit",
-        description: "disappearance",
-        price: '$14.53',
-        image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
-    },
-    {
-        title: "smooth",
+        title: "sea",
         description: 'Hello this is an awesome pizza, oh hey, lasagna',
         price: '$14.53',
         image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
     },
-    {
-        title: "spot",
-        description: 'Hello this is an awesome pizza, oh hey, lasagna',
-        price: '$14.53',
-        image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
-    },
+
+
+
+
 ];
 
 const styles = StyleSheet.create({
@@ -61,7 +54,7 @@ const styles = StyleSheet.create({
 const MenuItems = () => {
 
     return (
-        <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 300}} >
+        <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 100}} >
             {foods.map((food, index) => (
                     <View key={index}>
                         <View style={styles.menuItemStyle}>

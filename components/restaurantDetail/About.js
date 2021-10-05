@@ -27,6 +27,7 @@ const About = (props) => {
             <RestaurantImage image={image} />
             <RestaurantName name={name} />
             <RestaurantDescription description={description} />
+
         </View>
     );
 };
