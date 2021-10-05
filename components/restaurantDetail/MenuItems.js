@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, View} from "react-native";
+import {Image, ScrollView, Text, View} from "react-native";
 import {StyleSheet} from "react-native";
 
 const foods = [
@@ -56,14 +56,17 @@ const styles = StyleSheet.create({
 
 const MenuItems = () => {
 
-    console.log(foods[0].image)
     return (
-        <View>
-            <View style={styles.menuItemStyle}>
-                <FoodInfo food={foods[0]} />
-                <FoodImage food={foods[0]} />
-            </View>
-        </View>
+        <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 300}} >
+            {foods.map((food, index) => (
+                    <View key={index}>
+                        <View style={styles.menuItemStyle}>
+                            <FoodInfo food={food} />
+                            <FoodImage food={food} />
+                        </View>
+                    </View>
+                ))}
+        </ScrollView>
     );
 };
 
