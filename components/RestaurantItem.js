@@ -6,6 +6,7 @@ const RestaurantItem = () => {
     return (
         <View style={{}}>
             <RestaurantImage />
+            <RestaurantInfo />
         </View>
     );
 };
@@ -28,4 +29,16 @@ const RestaurantImage = () => (
         </TouchableOpacity>
     </>
 
+);
+
+const RestaurantInfo = () => (
+    <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10}}>
+        <View style={{flexDirection: 'column'}}>
+            <Text style={{fontSize: 15, fontWeight: 'bold'}}>Farmhouse Kitchen Thai Cuisine</Text>
+            <Text style={{fontSize: 13, color: 'gray'}}>30-45 • min</Text>
+        </View>
+        <View style={{backgroundColor: 'white', height: 30, width: 30, alignItems: 'center', borderRadius: 15, justifyContent: 'center'}}>
+            <Text>4.5</Text>
+        </View>
+    </View>
 )
