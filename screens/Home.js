@@ -44,13 +44,16 @@ const Home = () => {
                 <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab} />
                 <SearchBar  cityHandler={setCity}/>
             </View>
-            <ScrollView showsVerticalScrollIndicator={false}>
-                {/*<Categories />*/}
+            <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 120}}>
+                <Categories />
                 <RestaurantItems restaurantData={restaurantData} />
+                {/*<View style={{position: 'absolute', bottom: 0}}>*/}
+                <Divider width={1} />
+                    <BottomTabs />
+                {/*</View>*/}
             </ScrollView>
 
-            <Divider width={1} />
-            <BottomTabs />
+
 
         </SafeAreaView>
     );
