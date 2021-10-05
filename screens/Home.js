@@ -45,8 +45,8 @@ const Home = () => {
                 <SearchBar  cityHandler={setCity}/>
             </View>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Categories />
-            {/*    <RestaurantItems restaurantData={restaurantData} />*/}
+                {/*<Categories />*/}
+                <RestaurantItems restaurantData={restaurantData} />
             </ScrollView>
 
             <Divider width={1} />
