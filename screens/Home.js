@@ -44,7 +44,7 @@ const Home = () => {
                 <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab} />
                 <SearchBar  cityHandler={setCity}/>
             </View>
-            <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 120}}>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <Categories />
             {/*    <RestaurantItems restaurantData={restaurantData} />*/}
             </ScrollView>
