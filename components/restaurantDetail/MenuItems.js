@@ -3,14 +3,7 @@ import {Image, ScrollView, Text, View} from "react-native";
 import {StyleSheet} from "react-native";
 import {Divider} from "react-native-elements";
 
-const yelpRestaurantInfo = {
-    name: 'Farmhouse Kitchen Cuisine',
-    image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg',
-    price: '$$',
-    reviews: '1500',
-    rating: 5,
-    categories: [{title: 'Thai'}, {title: 'Comfort Food'}],
-}
+
 
 const foods = [
     {
