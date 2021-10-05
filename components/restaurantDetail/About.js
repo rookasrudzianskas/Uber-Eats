@@ -9,7 +9,7 @@ const yelpRestaurantInfo = {
     price: '$$',
     reviews: '1500',
     rating: 5,
-    categories: [{title: 'Thai'}, {title: 'Comfort Food'}],
+    categories: [{title: 'Thai'}, {title: 'Comfort Food'}, {title: 'Ice Cream'}],
 }
 
 const {name, image, price, reviews, rating, categories} = yelpRestaurantInfo;
