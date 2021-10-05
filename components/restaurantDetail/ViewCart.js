@@ -12,7 +12,7 @@ const ViewCart = () => {
             zIndex: 999
         }}>
             <View style={{flexDirection: 'row', justifyContent: 'center', width: '100%'}}>
-                <TouchableOpacity activeOpacity={0.5} style={{
+                <TouchableOpacity activeOpacity={0.8} style={{
                     marginTop: 20,
                     backgroundColor: 'black',
                     alignItems: 'center',
