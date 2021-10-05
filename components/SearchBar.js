@@ -40,8 +40,8 @@ const SearchBar = () => {
                 }
 
                 renderRightButton={()  => (
-                    <View style={{flexDirection: 'row'}}>
-                        <AntDesign name="clockcircle" size={11} color="black" />
+                    <View style={{flexDirection: 'row', marginRight: 8, backgroundColor: 'white', padding: 9, borderRadius: 30, alignItems: 'center', }}>
+                        <AntDesign name="clockcircle" size={11} color="black" style={{marginRight: 6,}}/>
                         <Text style={{}}>Search</Text>
 
                     </View>
