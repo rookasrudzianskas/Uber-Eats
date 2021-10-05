@@ -33,7 +33,7 @@ export const localRestaurants = [
     },
 ];
 
-const RestaurantItem = () => {
+const RestaurantItems = () => {
     return (
         <TouchableOpacity activeOpacity={0.8} style={{marginBottom: 30}}>
             {localRestaurants.map((restaurant, index) => (
@@ -50,7 +50,7 @@ const RestaurantItem = () => {
     );
 };
 
-export default RestaurantItem;
+export default RestaurantItems;
 
 
 const RestaurantImage = (props) => (
