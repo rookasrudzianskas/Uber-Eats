@@ -36,10 +36,16 @@ export const localRestaurants = [
 const RestaurantItem = () => {
     return (
         <TouchableOpacity activeOpacity={0.8} style={{marginBottom: 30}}>
-            <View style={{marginTop: 10, padding: 15, backgroundColor: 'white'}}>
-                <RestaurantImage />
-                <RestaurantInfo />
-            </View>
+            {localRestaurants.map((restaurant, index) => (
+                <View key={index} style={{marginTop: 10, padding: 15, backgroundColor: 'white'}}>
+                    <RestaurantImage
+                        image={restaurant?.image_url} />
+                    <RestaurantInfo
+                        name={restaurant?.name}
+                        rating={restaurant?.rating}
+                    />
+                </View>
+            ))}
         </TouchableOpacity>
     );
 };
@@ -47,10 +53,10 @@ const RestaurantItem = () => {
 export default RestaurantItem;
 
 
-const RestaurantImage = () => (
+const RestaurantImage = (props) => (
     <>
     <Image
-            source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg'}}
+            source={{uri: props.image}}
                 style={{
                     width: '100%',
                     height: 180,
@@ -64,14 +70,14 @@ const RestaurantImage = () => (
 
 );
 
-const RestaurantInfo = () => (
+const RestaurantInfo = (props) => (
     <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10}}>
         <View style={{flexDirection: 'column'}}>
-            <Text style={{fontSize: 15, fontWeight: 'bold'}}>Farmhouse Kitchen Thai Cuisine</Text>
+            <Text style={{fontSize: 15, fontWeight: 'bold'}}>{props?.name}</Text>
             <Text style={{fontSize: 13, color: 'gray'}}>30-45 • min</Text>
         </View>
         <View style={{backgroundColor: '#eee', height: 30, width: 30, alignItems: 'center', borderRadius: 15, justifyContent: 'center'}}>
-            <Text>4.5</Text>
+            <Text>{props?.rating}</Text>
         </View>
     </View>
 )
