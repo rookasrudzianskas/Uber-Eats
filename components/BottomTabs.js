@@ -22,7 +22,7 @@ export default function BottomTabs() {
 }
 
 const Icon = (props) => (
-    <TouchableOpacity>
+    <TouchableOpacity activeOpacity={0.8}>
         <View>
             <FontAwesome5
                 name={props?.icon}
