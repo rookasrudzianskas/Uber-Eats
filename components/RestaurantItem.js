@@ -4,10 +4,12 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 const RestaurantItem = () => {
     return (
-        <View style={{}}>
-            <RestaurantImage />
-            <RestaurantInfo />
-        </View>
+        <TouchableOpacity activeOpacity={0.8}>
+            <View style={{marginTop: 10, padding: 15, backgroundColor: 'white'}}>
+                <RestaurantImage />
+                <RestaurantInfo />
+            </View>
+        </TouchableOpacity>
     );
 };
 
@@ -37,7 +39,7 @@ const RestaurantInfo = () => (
             <Text style={{fontSize: 15, fontWeight: 'bold'}}>Farmhouse Kitchen Thai Cuisine</Text>
             <Text style={{fontSize: 13, color: 'gray'}}>30-45 • min</Text>
         </View>
-        <View style={{backgroundColor: 'white', height: 30, width: 30, alignItems: 'center', borderRadius: 15, justifyContent: 'center'}}>
+        <View style={{backgroundColor: '#eee', height: 30, width: 30, alignItems: 'center', borderRadius: 15, justifyContent: 'center'}}>
             <Text>4.5</Text>
         </View>
     </View>
