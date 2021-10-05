@@ -4,8 +4,10 @@ import HeaderTabs from "../components/HeaderTabs";
 
 const Home = () => {
     return (
-        <SafeAreaView>
-            <HeaderTabs />
+        <SafeAreaView style={{backgroundColor: '#eee', flexGrow: 1}}>
+            <View style={{backgroundColor: 'white', padding: 15}} >
+                <HeaderTabs />
+            </View>
         </SafeAreaView>
     );
 };
