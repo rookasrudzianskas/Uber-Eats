@@ -1,6 +1,7 @@
 import React from 'react';
 import {Image, ScrollView, Text, View} from "react-native";
 import {StyleSheet} from "react-native";
+import {Divider} from "react-native-elements";
 
 const foods = [
     {
@@ -64,6 +65,7 @@ const MenuItems = () => {
                             <FoodInfo food={food} />
                             <FoodImage food={food} />
                         </View>
+                        <Divider width={0.5} orientation={'vertical'} />
                     </View>
                 ))}
         </ScrollView>
