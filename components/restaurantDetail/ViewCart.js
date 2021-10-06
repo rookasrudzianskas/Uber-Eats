@@ -32,13 +32,15 @@ const ViewCart = () => {
                     <TouchableOpacity activeOpacity={0.8} style={{
                         marginTop: 20,
                         backgroundColor: 'black',
-                        alignItems: 'center',
-                        padding: 13,
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        padding: 15,
                         borderRadius: 30,
                         width: 300,
                         position: 'relative',
                     }}>
-                        <Text style={{color: 'white', fontSize: 20}}>View Cart</Text>
+                        <Text style={{color: 'white', fontSize: 20, marginRight: 10}}>View Cart</Text>
+                        <Text style={{color: 'white', fontSize: 20}}>{totalUSD}</Text>
                     </TouchableOpacity>
                 </View>
             </View>
