@@ -1,5 +1,5 @@
 import cartReducer from "./cartReducer";
-import {combineReducers} from "@reduxjs/toolkit";
+import {combineReducers} from "redux";
 
 let reducers = combineReducers({
     cartReducer: cartReducer,
