@@ -20,6 +20,7 @@ const ViewCart = ({navigation}) => {
     const [loading, setLoading] = useState(false);
 
     const addOrderToFirebase = () => {
+        setLoading(true);
         const db = firebase.firestore();
         db.collection('orders').add({
             items: items,
