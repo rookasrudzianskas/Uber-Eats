@@ -26,6 +26,12 @@ const ViewCart = () => {
                         {items.map((item, index) => (
                             <OrderItem key={index} item={item} />
                         ))}
+
+                        <View style={styles.subtotalContainer}>
+                            <Text style={styles.subtotalText}>Subtotal</Text>
+                            <Text>{totalUSD}</Text>
+                        </View>
+
                     </View>
                 </View>
             </>
