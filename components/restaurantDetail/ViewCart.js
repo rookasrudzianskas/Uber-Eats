@@ -5,7 +5,7 @@ import {StyleSheet} from "react-native";
 import OrderItem from "./OrderItem";
 import firebase from "../../firebase";
 
-const ViewCart = () => {
+const ViewCart = ({navigation}) => {
     const {items, restaurantName} = useSelector((state) => state.cartReducer.selectedItems);
     // $232.32 -> 232.32 -> Number['232.32'] -> ['232.32', '34.43', '54'] -> reduce ['232.32', '34.43', '54'] -> 232.32 + 34.43 + 54 -> sum total
     const total = items
@@ -25,6 +25,7 @@ const ViewCart = () => {
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
         });
         setModalVisible(false);
+        navigation.navigate('OrderCompleted');
     }
 
     const [modalVisible, setModalVisible] = useState(false);
