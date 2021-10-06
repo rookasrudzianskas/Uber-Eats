@@ -1,6 +1,7 @@
 import React from 'react';
 import {SafeAreaView, Text, View} from "react-native";
 import {useSelector} from "react-redux";
+import LottieView from 'lottie-react-native';
 
 const OrderCompleted = () => {
 
@@ -16,7 +17,7 @@ const OrderCompleted = () => {
     });
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{backgroundColor: 'white'}}>
             <Text>Your order at {restaurantName} has been placed for {totalUSD}</Text>
         </SafeAreaView>
     );
