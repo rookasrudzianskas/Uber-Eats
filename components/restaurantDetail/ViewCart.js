@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text, TouchableOpacity} from "react-native";
+import React, {useState} from 'react';
+import {View, Text, TouchableOpacity, Modal} from "react-native";
 import {useSelector} from "react-redux";
 
 const ViewCart = () => {
@@ -14,9 +14,22 @@ const ViewCart = () => {
         currency: 'USD',
     });
 
+    const [modalVisible, setModalVisible] = useState(false);
+    const checkOutModelContent = () => {
+        return (
+            <TouchableOpacity onPress={() => setModalVisible(false)}>
+                <Text style={{color: 'white'}}>Checkout</Text>
+            </TouchableOpacity>
+        )
+    }
+
     // console.log(totalUSD);
     return (
         <>
+            <Modal animationType='slide' visible={modalVisible} transparent={true} onRequestClose={() => setModalVisible(false)}>
+                {checkOutModelContent()}
+            </Modal>
+
             {total ? (
 
 
@@ -48,7 +61,7 @@ const ViewCart = () => {
                 <>
                 </>
             )}
-        </>
+            </>
     );
 };
 
