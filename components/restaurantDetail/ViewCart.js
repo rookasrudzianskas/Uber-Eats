@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import {StyleSheet} from "react-native";
 import OrderItem from "./OrderItem";
 import firebase from "../../firebase";
+import LottieView from 'lottie-react-native';
 
 const ViewCart = ({navigation}) => {
     const {items, restaurantName} = useSelector((state) => state.cartReducer.selectedItems);
@@ -23,12 +24,18 @@ const ViewCart = ({navigation}) => {
             items: items,
             restaurantName: restaurantName,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        }).then(() => {
+            setTimeout(() => {
+                setLoading(false);
+                navigation.navigate('OrderCompleted');
+                setModalVisible(false);
+            }, 2500);
         });
-        setModalVisible(false);
-        navigation.navigate('OrderCompleted');
     }
 
     const [modalVisible, setModalVisible] = useState(false);
+    const [loading, setLoading] = useState(false);
+
     const checkOutModalContent = () => {
         return (
             <>
