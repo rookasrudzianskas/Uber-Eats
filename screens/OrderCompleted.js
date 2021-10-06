@@ -46,26 +46,39 @@ const OrderCompleted = () => {
     }, []);
 
     return (
-        <SafeAreaView style={{backgroundColor: 'white'}}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
             {/* green checkmark */}
-            <LottieView autoPlay speed={0.5} loop={false} source={require('../assets/animations/check-mark.json')} style={{height: 100, alignSelf: 'center', marginBottom: 30}}/>
-            <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-                Your order at {restaurantName} has been placed for {totalUSD}
-            </Text>
-            <ScrollView>
-                <MenuItems
-                    foods={lastOrder.items}
-                    hideCheckbox={true}
-                    marginLeft={10}
-                />
+            <View
+                style={{
+                    margin: 15,
+                    alignItems: "center",
+                    height: "100%",
+                }}
+            >
                 <LottieView
-                    style={{ height: 200, alignSelf: "center" }}
-                    source={require("../assets/animations/cooking.json")}
+                    style={{ height: 100, alignSelf: "center", marginBottom: 30 }}
+                    source={require("../assets/animations/check-mark.json")}
                     autoPlay
                     speed={0.5}
+                    loop={false}
                 />
-            </ScrollView>
-            {/* salads making*/}
+                <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+                    Your order at {restaurantName} has been placed for {totalUSD}
+                </Text>
+                <ScrollView>
+                    <MenuItems
+                        foods={lastOrder.items}
+                        hideCheckbox={true}
+                        marginLeft={10}
+                    />
+                    <LottieView
+                        style={{ height: 200, alignSelf: "center" }}
+                        source={require("../assets/animations/cooking.json")}
+                        autoPlay
+                        speed={0.5}
+                    />
+                </ScrollView>
+            </View>
         </SafeAreaView>
     );
 };
