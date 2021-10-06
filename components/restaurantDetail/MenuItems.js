@@ -58,18 +58,18 @@ const styles = StyleSheet.create({
 
 });
 
-const MenuItems = () => {
+const MenuItems = ({restaurantName}) => {
     const dispatch = useDispatch();
-    const selectItem = (item) => dispatch({
+    const selectItem = (item, checkBoxValue) => dispatch({
         type: 'ADD_TO_CART',
-        payload: item,
+        payload: {...item, restaurantName: restaurantName, checkboxValue: checkBoxValue},
     })
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 29}}>
             {foods.map((food, index) => (
                     <View key={index}>
                         <View style={styles.menuItemStyle}>
-                            <BouncyCheckbox onPress={() => console.log("Rokas")} iconStyle={{borderColor: 'lightgray', borderRadius: 0}} fillColor={'green'} />
+                            <BouncyCheckbox onPress={(checkBoxValue) => selectItem(food, checkBoxValue)} iconStyle={{borderColor: 'lightgray', borderRadius: 0}} fillColor={'green'} />
                             <FoodInfo food={food} />
                             <FoodImage food={food} />
                         </View>

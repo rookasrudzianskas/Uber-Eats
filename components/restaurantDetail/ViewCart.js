@@ -1,7 +1,9 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from "react-native";
+import {useSelector} from "react-redux";
 
 const ViewCart = () => {
+    const items = useSelector((state) => state.cartReducer.selectedItems.items);
     return (
         <View style={{
             flex: 1,
