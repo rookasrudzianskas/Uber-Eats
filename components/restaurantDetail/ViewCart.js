@@ -4,6 +4,10 @@ import {useSelector} from "react-redux";
 
 const ViewCart = () => {
     const items = useSelector((state) => state.cartReducer.selectedItems.items);
+    // $232.32 -> 232.32 -> Number['232.32'] -> ['232.32', '34.43', '54'] -> reduce ['232.32', '34.43', '54'] -> 232.32 + 34.43 + 54 -> sum total
+    const total = items
+        .map((item) => Number(item.price.replace("$", "")))
+        .reduce((prev, curr) => prev + curr, 0);
     return (
         <View style={{
             flex: 1,
