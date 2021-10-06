@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Modal} from "react-native";
 import {useSelector} from "react-redux";
+import {StyleSheet} from "react-native";
 
 const ViewCart = () => {
-    const items = useSelector((state) => state.cartReducer.selectedItems.items);
+    const {items, restaurantName} = useSelector((state) => state.cartReducer.selectedItems);
     // $232.32 -> 232.32 -> Number['232.32'] -> ['232.32', '34.43', '54'] -> reduce ['232.32', '34.43', '54'] -> 232.32 + 34.43 + 54 -> sum total
     const total = items
         .map((item) => Number(item.price.replace("$", "")))
@@ -15,22 +16,54 @@ const ViewCart = () => {
     });
 
     const [modalVisible, setModalVisible] = useState(false);
-    const checkOutModelContent = () => {
+    const checkOutModalContent = () => {
         return (
-            <View style={{backgroundColor: 'black', padding: 10, borderRadius: 30, width: 150, alignItems: 'center'}}>
-                <TouchableOpacity onPress={() => setModalVisible(false)}>
-
-                        <Text style={{color: 'white'}}>Checkout</Text>
-                </TouchableOpacity>
-            </View>
+            <>
+                <View style={styles.modalContainer}>
+                    <View style={styles.modalCheckoutContainer}>
+                        <Text style={styles.restaurantName}>{restaurantName}</Text>
+                    </View>
+                </View>
+            </>
         )
-    }
+    };
+
+    const styles = StyleSheet.create({
+        modalContainer: {
+            flex: 1,
+            justifyContent: 'flex-end',
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        },
+        modalCheckoutContainer: {
+            backgroundColor: 'white',
+            padding: 16,
+            height: 500,
+            borderWidth: 1,
+        },
+        restaurantName: {
+            textAlign: 'center',
+            fontWeight: '600',
+            fontSize: 18,
+            marginBottom: 10,
+        },
+        subtotalContainer: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: 15,
+        },
+        subtotalText: {
+            textAlign: 'center',
+            fontWeight: '600',
+            fontSize: 15,
+            marginBottom: 10,
+        }
+    });
 
     // console.log(totalUSD);
     return (
         <>
             <Modal animationType='slide' visible={modalVisible} transparent={true} onRequestClose={() => setModalVisible(false)}>
-                {checkOutModelContent()}
+                {checkOutModalContent()}
             </Modal>
 
             {total ? (
@@ -54,7 +87,9 @@ const ViewCart = () => {
                         borderRadius: 30,
                         width: 300,
                         position: 'relative',
-                    }}>
+                    }}
+                    onPress={() => setModalVisible(true)}
+                    >
                         <Text style={{color: 'white', fontSize: 20, marginRight: 10}}>View Cart</Text>
                         <Text style={{color: 'white', fontSize: 20}}>{totalUSD}</Text>
                     </TouchableOpacity>
