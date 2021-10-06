@@ -17,9 +17,12 @@ const ViewCart = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const checkOutModelContent = () => {
         return (
-            <TouchableOpacity onPress={() => setModalVisible(false)}>
-                <Text style={{color: 'white'}}>Checkout</Text>
-            </TouchableOpacity>
+            <View style={{backgroundColor: 'black', padding: 10, borderRadius: 30, width: 150, alignItems: 'center'}}>
+                <TouchableOpacity onPress={() => setModalVisible(false)}>
+
+                        <Text style={{color: 'white'}}>Checkout</Text>
+                </TouchableOpacity>
+            </View>
         )
     }
 
