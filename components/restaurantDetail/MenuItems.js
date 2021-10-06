@@ -32,6 +32,7 @@ const foods = [
         price: '$14.53',
         image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
     },
+
 ];
 
 const styles = StyleSheet.create({
