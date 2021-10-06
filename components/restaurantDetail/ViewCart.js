@@ -32,8 +32,9 @@ const ViewCart = () => {
                             <Text>{totalUSD}</Text>
                         </View>
                         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                            <TouchableOpacity style={{marginTop: 20, backgroundColor: 'black', alignItems: 'center', padding:  13, borderRadius: 30, width: 300, position: 'relative'}} activeOpacity={0.8}>
+                            <TouchableOpacity onPress={() => setModalVisible(false)} style={{marginTop: 20, backgroundColor: 'black', alignItems: 'center', padding:  13, borderRadius: 30, width: 300, position: 'relative'}} activeOpacity={0.8}>
                                 <Text style={{color: 'white', fontSize: 20,}}>Checkout</Text>
+                                <Text style={{position: 'absolute', color: 'white', right: 20, fontSize: 15, top: 17}}>{total ? totalUSD : ''}</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
