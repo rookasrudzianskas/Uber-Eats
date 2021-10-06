@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Modal} from "react-native";
 import {useSelector} from "react-redux";
 import {StyleSheet} from "react-native";
+import OrderItem from "./OrderItem";
 
 const ViewCart = () => {
     const {items, restaurantName} = useSelector((state) => state.cartReducer.selectedItems);
@@ -22,6 +23,9 @@ const ViewCart = () => {
                 <View style={styles.modalContainer}>
                     <View style={styles.modalCheckoutContainer}>
                         <Text style={styles.restaurantName}>{restaurantName}</Text>
+                        {items.map((item, index) => (
+                            <OrderItem key={index} item={item} />
+                        ))}
                     </View>
                 </View>
             </>
