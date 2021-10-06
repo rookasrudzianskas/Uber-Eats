@@ -33,6 +33,12 @@ const foods = [
         image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
     },
 
+    {
+        title: "sea",
+        description: 'Hello this is an awesome pizza, oh hey, lasagna',
+        price: '$14.53',
+        image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
+    },
 ];
 
 const styles = StyleSheet.create({
@@ -69,16 +75,23 @@ const MenuItems = () => {
 export default MenuItems;
 
 const FoodInfo = (props) => (
-    <View style={{width: 240, justifyContent: 'space-evenly'}}>
-        <Text style={styles.titleStyle}>{props?.food?.title}</Text>
-        <Text>{props?.food?.description}</Text>
-        <Text>{props?.food?.price}</Text>
+    <View style={{ width: 240, justifyContent: "space-evenly" }}>
+        <Text style={styles.titleStyle}>{props.food.title}</Text>
+        <Text>{props.food.description}</Text>
+        <Text>{props.food.price}</Text>
     </View>
 );
 
-
-const FoodImage = (props) => (
+const FoodImage = ({ marginLeft, ...props }) => (
     <View>
-        <Image source={{uri: props?.food?.image}}  style={{width: 100, height: 100, borderRadius: 8}}/>
+        <Image
+            source={{ uri: props.food.image }}
+            style={{
+                width: 100,
+                height: 100,
+                borderRadius: 8,
+                marginLeft: marginLeft,
+            }}
+        />
     </View>
-)
+);
