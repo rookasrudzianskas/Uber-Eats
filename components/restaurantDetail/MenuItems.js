@@ -39,6 +39,7 @@ const foods = [
         price: '$14.53',
         image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
     },
+
 ];
 
 const styles = StyleSheet.create({
@@ -51,13 +52,14 @@ const styles = StyleSheet.create({
         fontSize: 19,
         fontWeight: '600',
 
-    }
+    },
+
 });
 
 const MenuItems = () => {
 
     return (
-        <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 100}} >
+        <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 29}}>
             {foods.map((food, index) => (
                     <View key={index}>
                         <View style={styles.menuItemStyle}>

@@ -9,9 +9,9 @@ const RestaurantDetail = ({route, navigation}) => {
     return (
         <View style={{}}>
             <View>
-            <About route={route} />
-            <Divider width={1.8} style={{marginVertical: 20}} />
-            <MenuItems />
+                <About route={route} />
+                <Divider width={1.8} style={{marginVertical: 20}} />
+                <MenuItems />
             </View>
             <ViewCart navigation={navigation} restaurantName={route.params.name} />
         </View>

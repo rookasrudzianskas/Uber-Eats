@@ -8,7 +8,7 @@ const ViewCart = () => {
             alignItems: "center",
             flexDirection: 'row',
             position: 'absolute',
-            bottom: 80,
+            bottom: 150,
             zIndex: 999
         }}>
             <View style={{flexDirection: 'row', justifyContent: 'center', width: '100%'}}>
