@@ -21,6 +21,7 @@ const OrderCompleted = () => {
             {/* green checkmark */}
             <LottieView autoPlay speed={0.5} loop={false} source={require('../assets/animations/check-mark.json')} style={{height: 100, alignSelf: 'center', marginBottom: 30}}/>
             <Text>Your order at {restaurantName} has been placed for {totalUSD}</Text>
+            <LottieView autoPlay speed={0.5} loop={false} source={require('../assets/animations/cooking.json')} style={{height: 100, alignSelf: 'center', marginBottom: 30}}/>
             {/* salads making*/}
         </SafeAreaView>
     );

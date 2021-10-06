@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 
 });
 
-const MenuItems = ({restaurantName}) => {
+const MenuItems = ({restaurantName, foods, hideCheckbox, marginLeft}) => {
     const dispatch = useDispatch();
     const selectItem = (item, checkBoxValue) => dispatch({
         type: 'ADD_TO_CART',
@@ -75,8 +75,16 @@ const MenuItems = ({restaurantName}) => {
             {foods.map((food, index) => (
                     <View key={index}>
                         <View style={styles.menuItemStyle}>
-                            <BouncyCheckbox onPress={(checkBoxValue) => selectItem(food, checkBoxValue)} iconStyle={{borderColor: 'lightgray', borderRadius: 0}} fillColor={'green'} isChecked={isFoodInCart(food, cartItems)}/>
-                            <FoodInfo food={food} />
+
+                            {hideCheckbox ? (
+                                <>
+                                </>) :
+                                (
+                                <BouncyCheckbox onPress={(checkBoxValue) => selectItem(food, checkBoxValue)}
+                                             iconStyle={{borderColor: 'lightgray', borderRadius: 0}} fillColor={'green'}
+                                             isChecked={isFoodInCart(food, cartItems)}/>
+                                )}
+                                             <FoodInfo food={food} />
                             <FoodImage food={food} />
                         </View>
                         <Divider width={0.5} orientation={'vertical'} style={{marginHorizontal: 20}} />
