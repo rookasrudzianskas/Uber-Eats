@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View} from "react-native";
+import {SafeAreaView, Text, View} from "react-native";
 import {useSelector} from "react-redux";
 
 const OrderCompleted = () => {
@@ -16,9 +16,9 @@ const OrderCompleted = () => {
     });
 
     return (
-        <View>
+        <SafeAreaView>
             <Text>Your order at {restaurantName} has been placed for {totalUSD}</Text>
-        </View>
+        </SafeAreaView>
     );
 };
 
