@@ -27,8 +27,8 @@ const ViewCart = ({navigation}) => {
         }).then(() => {
             setTimeout(() => {
                 setLoading(false);
-                navigation.navigate('OrderCompleted');
                 setModalVisible(false);
+                navigation.navigate('OrderCompleted');
             }, 2500);
         });
     }
