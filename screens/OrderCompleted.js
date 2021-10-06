@@ -18,7 +18,9 @@ const OrderCompleted = () => {
 
     return (
         <SafeAreaView style={{backgroundColor: 'white'}}>
+            {/* green checkmark */}
             <Text>Your order at {restaurantName} has been placed for {totalUSD}</Text>
+            {/* salads making*/}
         </SafeAreaView>
     );
 };
