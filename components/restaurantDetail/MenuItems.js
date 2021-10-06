@@ -8,7 +8,6 @@ import {useDispatch, useSelector} from "react-redux";
 
 
 
-
 const styles = StyleSheet.create({
     menuItemStyle: {
         flexDirection: 'row',
