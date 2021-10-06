@@ -4,7 +4,7 @@ import {StyleSheet} from "react-native";
 import {Divider} from "react-native-elements";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import ViewCart from "./ViewCart";
-
+import {useDispatch} from "react-redux";
 
 
 const foods = [
@@ -42,6 +42,8 @@ const foods = [
 
 ];
 
+
+
 const styles = StyleSheet.create({
     menuItemStyle: {
         flexDirection: 'row',
@@ -57,7 +59,11 @@ const styles = StyleSheet.create({
 });
 
 const MenuItems = () => {
-
+    const dispatch = useDispatch();
+    const selectItem = (item) => dispatch({
+        type: 'ADD_TO_CART',
+        payload: item,
+    })
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 29}}>
             {foods.map((food, index) => (
