@@ -8,6 +8,13 @@ const ViewCart = () => {
     const total = items
         .map((item) => Number(item.price.replace("$", "")))
         .reduce((prev, curr) => prev + curr, 0);
+
+    const totalUSD = total.toLocaleString('en', {
+        style: 'currency',
+        currency: 'USD',
+    });
+
+    // console.log(totalUSD);
     return (
         <View style={{
             flex: 1,
