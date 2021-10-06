@@ -7,41 +7,6 @@ import ViewCart from "./ViewCart";
 import {useDispatch, useSelector} from "react-redux";
 
 
-const foods = [
-    {
-        title: 'Lasagna',
-        description: 'Hello this is an awesome pizza, oh hey, lasagna',
-        price: '$14.53',
-        image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
-    },
-    {
-        title: "sea",
-        description: 'Hello this is an awesome pizza, oh hey, lasagna',
-        price: '$14.53',
-        image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
-    },
-    {
-        title: "sea",
-        description: 'Hello this is an awesome pizza, oh hey, lasagna',
-        price: '$14.53',
-        image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
-    },
-    {
-        title: "sea",
-        description: 'Hello this is an awesome pizza, oh hey, lasagna',
-        price: '$14.53',
-        image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
-    },
-
-    {
-        title: "sea",
-        description: 'Hello this is an awesome pizza, oh hey, lasagna',
-        price: '$14.53',
-        image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
-    },
-
-];
-
 
 
 const styles = StyleSheet.create({
@@ -85,7 +50,7 @@ const MenuItems = ({restaurantName, foods, hideCheckbox, marginLeft}) => {
                                              isChecked={isFoodInCart(food, cartItems)}/>
                                 )}
                                              <FoodInfo food={food} />
-                            <FoodImage food={food} />
+                            <FoodImage food={food} marginLeft={marginLeft ? marginLeft : 0} />
                         </View>
                         <Divider width={0.5} orientation={'vertical'} style={{marginHorizontal: 20}} />
                     </View>
